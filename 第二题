@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*- 
+"""
+Project: code1
+Creator: wcs
+Create time: 2020-06-30 15:01
+IDE: PyCharm
+Introduction: 
+"""
+x = input()
+x = int(x)
+a = [[0 for col in range(3)] for row in range(x)]
+sum = 0
+b = [0,0,0,0,0]
+print(a)
+#print(a[1])
+for i in range(0,x):
+    c, d = map(int, input().split())
+    a[i] = [c, d]
+#print(a)
+for i in a:
+    x1 = i[0]
+    y1 = i[1]
+    #print(x1, y1)
+    if ([x1-1, y1] in a) and ([x1+1, y1] in a) and ([x1, y1+1] in a) and ([x1, y1-1] in a):
+        #print([x1,y1])
+        if [x1-1, y1-1] in a:
+            sum += 1
+        if [x1+1, y1-1] in a:
+            sum += 1
+        if [x1+1, y1+1] in a:
+            sum += 1
+        if [x1-1, y1+1] in a:
+            sum += 1
+        b[sum] += 1
+        sum = 0
+for i in b:
+    print(i)
+
